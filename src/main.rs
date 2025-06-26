@@ -48,7 +48,7 @@ fn main() {
         output_filename = "output.wav".to_string();
     }
 
-    let _ = std::fs::write("output.pcm", parse_melody("examples/sandstorm.txt", 1));
+    let _ = std::fs::write("output.pcm", parse_melody(&args[1], 0));
     let _ = std::process::Command::new("ffmpeg")
         .args([
             "-y",
